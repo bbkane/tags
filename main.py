@@ -15,7 +15,7 @@ with a custom set-based query language for fun.
 Help:
 
 Please see Benjamin Kane for help.
-Code at <repo>
+Code at https://github.com/bbkane/tags
 """
 
 

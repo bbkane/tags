@@ -38,8 +38,8 @@ because it's the only unary operator. TODO: add parens to this
     <expr> = tag | <expr> <op> <expr> | ~ tag
     <op> = & | \|   # The backslash is to escape the pipe (it's an operator)
 
-& denotes set intersection (i.e. the item has all tags separated by it)
-| denotes set union (i.e. the item has at least one tag)
+- `&` denotes set intersection (i.e. the item has all tags separated by it)
+- `|` denotes set union (i.e. the item has at least one tag)
 
 TODO: work on precedence rules...
 
@@ -47,24 +47,25 @@ TODO: work on precedence rules...
 
 I need parens here...
 
-Query: `country & rock`
-Explanation: find all items with the tags country and rock
-Python list expression:
+- Query: `country & rock`
+- Explanation: find all items with the tags country and rock
+- Python list expression:
 
 ```
 [i for i in items if 'country' in i.tags and 'rock' in i.tags]
 ```
 
-Query: `country & ~ rock`
-Explanation: find all items with the tags country but no rock
-Python list expression:
+- Query: `country & ~ rock`
+- Explanation: find all items with the tags country but no rock
+- Python list expression:
 
 ```
 [i for i in items if 'country' in i.tags and 'rock' not in i.tags]
 ```
-Query: `country & (rock | blues)`
-Explanation: find all items with the tags country and either a rock or a blues tag (or both)
-Python list expression:
+
+- Query: `country & (rock | blues)`
+- Explanation: find all items with the tags country and either a rock or a blues tag (or both)
+- Python list expression:
 
 ```
 [i for i in items if 'country' in i.tags and ('rock' in i.tags or 'blues' in i.tags)]
