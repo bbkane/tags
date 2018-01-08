@@ -20,6 +20,12 @@ No Python stuff now, I'm just trying to get some good SQL here
 sqlite3 tags.db < sample_queries.sql
 ```
 
+Rebuild the db and run the test on save with this monster:
+
+```
+git ls | entr -cs 'rm tags.db && sqlite3 tags.db < schema.sql && sqlite3 tags.db < insert_sample_data.sql && sqlite3 tags.db < sample_queries.sql
+```
+
 # General Ideas
 
 ### Query language:
