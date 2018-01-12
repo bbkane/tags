@@ -9,16 +9,15 @@ PRAGMA foreign_keys = ON;
 -- print command along with result. Too bad this prints comments too...
 .echo on
 
--- See everything
-SELECT item.name, tag.name
-FROM item
-    JOIN item_tag ON item.id = item_tag.item_id
-    JOIN tag ON item_tag.tag_id = tag.id
-;
+-- Lets see if we can use the new view to simplify tag queries
+SELECT *
+FROM item_tag_list;
 
+-- Okay, start the real work
+
+.exit
 -- To make this simple, lets just get one tag at a time then use UNION ALL (|)
 -- and EXCEPT (-) and INTERSECTION (&) to combine them
-
 
 -- country & rock
 
@@ -58,8 +57,6 @@ EXCEPT
     WHERE
         tag.name = 'rap' OR tag.name = 'country'
 ;
-
-.exit
 
 -- country - rock == country ^ ~ rock
     SELECT DISTINCT item.name

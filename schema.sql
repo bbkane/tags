@@ -20,3 +20,13 @@ CREATE TABLE item_tag (
     FOREIGN KEY (item_id) REFERENCES item(id) ON DELETE CASCADE,
     PRIMARY KEY (tag_id, item_id)
 );
+
+CREATE VIEW item_tag_list AS
+SELECT
+    item.id as item_id,
+    item.name as item_name,
+    tag.id as tag_id,
+    tag.name as tag_name
+FROM item
+    JOIN item_tag ON item.id = item_tag.item_id
+    JOIN tag ON item_tag.tag_id = tag.id;
