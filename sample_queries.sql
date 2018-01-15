@@ -2,6 +2,7 @@
 .header on
 -- see cleaner results
 .mode column
+.width auto
 -- see execution time
 .timer on
 -- enforce foreign keys
@@ -14,6 +15,17 @@ SELECT *
 FROM item_tag_list;
 
 -- Okay, start the real work
+
+SELECT * FROM item_joined_tags;
+
+-- Why won't this work?
+SELECT item_name FROM item_joined_tags
+WHERE instr("country", tags) OR instr("rap", tags);
+
+-- This seems to work
+SELECT item_name FROM item_joined_tags
+WHERE tags LIKE '%country%' OR tags LIKE '%rap%';
+
 
 .exit
 -- To make this simple, lets just get one tag at a time then use UNION ALL (|)

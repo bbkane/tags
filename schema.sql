@@ -21,12 +21,16 @@ CREATE TABLE item_tag (
     PRIMARY KEY (tag_id, item_id)
 );
 
-CREATE VIEW item_tag_list AS
+-- I don't know the best way to do this so here we go!
+-- Problems with this:
+-- - Probably inefficient (stringly typed)
+-- - requires marker character
+CREATE VIEW item_joined_tags AS
 SELECT
     item.id as item_id,
     item.name as item_name,
-    tag.id as tag_id,
-    tag.name as tag_name
+    group_concat(tag.name, ",") as tags
 FROM item
     JOIN item_tag ON item.id = item_tag.item_id
-    JOIN tag ON item_tag.tag_id = tag.id;
+    JOIN tag ON item_tag.tag_id = tag.id
+GROUP BY item_id;

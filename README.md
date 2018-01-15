@@ -2,6 +2,10 @@
 
 This is a toy project to experiment with a tag-based system
 
+http://web.archive.org/web/20150813211028/http://tagging.pui.ch/post/37027745720/tags-database-schemas
+
+Basically covers everything I have been trying to do...
+
 # Install
 
 TODO: make this a real python module and such

@@ -22,3 +22,4 @@ INSERT INTO item_tag (item_id, tag_id) VALUES (2, 1);
 
 -- Add the rap tag
 INSERT INTO item_tag (item_id, tag_id) VALUES (4, 2);
+INSERT INTO item_tag (item_id, tag_id) VALUES (3, 2);
