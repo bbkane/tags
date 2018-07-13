@@ -9,5 +9,10 @@ IFS=$'\n\t'
 readonly script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${script_dir}"
 
-rm tags.db && sqlite3 tags.db < schema.sql && sqlite3 tags.db < insert_sample_data.sql
-sqlite3 tags.db < sample_queries.sql
+# rm -f tags.db \
+#     && sqlite3 tags.db < schema.sql \
+#     && sqlite3 tags.db < insert_sample_data.sql
+
+sqlite3 tags.db < insert_sample_data.sql
+
+sqlite3 tags.db 'SELECT * FROM item;'

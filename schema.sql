@@ -1,14 +1,18 @@
 
 -- https://sqlite.org/autoinc.html says I don't need autoincrement
 CREATE TABLE item (
-    id integer PRIMARY KEY,
+    id integer PRIMARY KEY NOT NULL,
     name text NOT NULL,
+    -- file:///Users/bbkane/Documents/sqlite-doc-3240000/datatype3.html
+    -- Why I'm using TEXT for timestamps
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
     UNIQUE (name)
 );
 
 
 CREATE TABLE tag (
-    id integer PRIMARY KEY,
+    id integer PRIMARY KEY NOT NULL,
     name text NOT NULL,
     UNIQUE (name)
 );
