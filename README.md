@@ -1,5 +1,7 @@
 # Tags
 
+NOTE (2019-05-10): see taggedmarks instead.
+
 This is a toy project to experiment with a tag-based system
 
 http://web.archive.org/web/20150813211028/http://tagging.pui.ch/post/37027745720/tags-database-schemas
