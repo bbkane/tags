@@ -28,7 +28,7 @@ CREATE TABLE item_tag (
 -- I don't know the best way to do this so here we go!
 -- Problems with this:
 -- - Probably inefficient (stringly typed)
--- - requires marker character
+-- - requires separating character
 CREATE VIEW item_joined_tags AS
 SELECT
     item.id as item_id,
